@@ -396,8 +396,6 @@
     <div class="panel-section">
       <h2>Peta Dasar</h2>
       <select id="basemap-select">
-        <option value="dark">Gelap (Carto Dark)</option>
-        <option value="light">Terang (Carto Light)</option>
         <option value="sat" selected>Satelit (Esri)</option>
         <option value="osm">OpenStreetMap</option>
       </select>
@@ -427,6 +425,7 @@
     <div id="map"></div>
     <div id="title-hud">
       <div class="t1">Sedang menampilkan</div>
+      <div class="t2" id="title-hud-layer">Zona Panas — Agustus 2026</div>
     </div>
     <div id="zoom-hud">
       <button id="zoom-in">+</button>
@@ -633,8 +632,6 @@ const map = L.map('map', {
 }).fitBounds(BOUNDS);
 
 const basemaps = {
-  dark: L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { subdomains: 'abcd', maxZoom: 19 }),
-  light: L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { subdomains: 'abcd', maxZoom: 19 }),
   sat: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19 }),
   osm: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { subdomains: 'abc', maxZoom: 19 })
 };
